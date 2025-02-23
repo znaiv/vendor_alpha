@@ -25,7 +25,8 @@ endif
 # 1 - vanilla (default)
 # 2 - microg
 # 3 - gapps
-ifeq ($(TARGET_BUILD_PACKAGE),3)
+# 4 - mind the gapps
+ifeq ($(TARGET_BUILD_PACKAGE),$(filter $(TARGET_BUILD_PACKAGE),3 4))
   ALPHA_BUILD_VARIANT := gapps
 else
   ifeq ($(TARGET_BUILD_PACKAGE),2)

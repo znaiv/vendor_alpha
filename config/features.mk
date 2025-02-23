@@ -44,7 +44,9 @@ ifneq ($(TARGET_FACE_UNLOCK_SUPPORTED),false)
 endif
 
 # GAPPS
-ifeq ($(TARGET_BUILD_PACKAGE),3)
+ifeq ($(TARGET_BUILD_PACKAGE),4)
+  $(call inherit-product, vendor/gapps/gapps.mk)
+else ifeq ($(TARGET_BUILD_PACKAGE),3)
   BUILD_GMS_OVERLAYS_AND_PROPS := true
   $(call inherit-product, vendor/gms/products/gms.mk)
 else
